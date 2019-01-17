@@ -45,10 +45,4 @@ public class Knight extends Piece {
 		checkSquare(legalMoves, targetSquare);
 		return legalMoves;
 	}
-
-	private void checkSquare(List<Square> legalMoves, Square square) {
-		if (square != null && square.getPiece() == null || square.getPiece().side != this.side) {
-			legalMoves.add(square);
-		}
-	}
 }

@@ -40,4 +40,10 @@ public abstract class Piece {
 	public Square getSquare() {
 		return this.square;
 	}
+	
+	protected void checkSquare(List<Square> legalMoves, Square square) {
+		if (square != null && square.getPiece() == null || square.getPiece().side != this.side) {
+			legalMoves.add(square);
+		}
+	}
 }
