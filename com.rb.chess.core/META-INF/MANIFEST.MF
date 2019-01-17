@@ -6,3 +6,5 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: RB
 Automatic-Module-Name: com.rb.chess.core
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: com.rb.chess.core.model,
+ com.rb.chess.core.model.piece
