@@ -61,3 +61,7 @@ It is presumed that the move is valid.
 This will be checked elsewhere.
 
 # Lesson 10 - Computing Legal Moves
+
+Legal moves for each piece will be computed, after which those moves will be merged as all available legal moves for a player.
+A lot of loops, this could and should all be done with streams.
+Will convert all of this later.

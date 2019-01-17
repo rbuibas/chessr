@@ -2,6 +2,12 @@ package com.rb.chess.core.model;
 
 import com.rb.chess.core.model.piece.Piece;
 
+/**
+ * Class containing move logic and information.
+ * 
+ * @author rbuibas
+ *
+ */
 public class ChessMove {
 	private Square initialSquare;
 	private Square targetSquare;

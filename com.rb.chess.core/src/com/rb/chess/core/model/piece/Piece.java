@@ -1,5 +1,7 @@
 package com.rb.chess.core.model.piece;
 
+import java.util.List;
+
 import com.rb.chess.core.model.Side;
 import com.rb.chess.core.model.Square;
 
@@ -20,6 +22,8 @@ public abstract class Piece {
 	private Square square;
 	protected final Side side;
 	
+	public abstract List<Square> computeLegalMoves();
+	
 	// Added square because each piece has initial position
 	// Constructor is protected since only the child classes can call it
 	protected Piece(Square square, Side side, int score) {
@@ -31,5 +35,9 @@ public abstract class Piece {
 
 	public void setSquare(Square square) {
 		this.square = square;
+	}
+
+	public Square getSquare() {
+		return this.square;
 	}
 }
