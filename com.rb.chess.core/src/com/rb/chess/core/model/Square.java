@@ -1,5 +1,7 @@
 package com.rb.chess.core.model;
 
+import com.rb.chess.core.model.piece.Piece;
+
 public class Square {
 	// final because no intent of changing it exists
 	private final Board board;
@@ -11,12 +13,17 @@ public class Square {
 	
 	//need a piece object as well
 	// not final because the piece can change (e.g. pawn promotion)
-	
+	private Piece piece;
 	
 	public Square(Board board, int row, int col) {
 		this.board = board;
 		this.row = row;
 		this.col = col;
 	}
+	
+	public void setPiece(Piece piece) {
+		this.piece = piece;
+	}
 
 }
+

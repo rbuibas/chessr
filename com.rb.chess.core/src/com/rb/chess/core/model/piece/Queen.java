@@ -3,10 +3,10 @@ package com.rb.chess.core.model.piece;
 import com.rb.chess.core.model.Side;
 import com.rb.chess.core.model.Square;
 
-public class King extends Piece {
+public class Queen extends Piece {
 
-	public King(Square square, Side side) {
-		super(square, side, 99);
+	public Queen(Square square, Side side) {
+		super(square, side, 9);
 	}
 	
 	/*
@@ -16,6 +16,6 @@ public class King extends Piece {
 	 */
 	@Override
 	public String toString() {
-		return side == Side.WHITE ? "K" : "k";
+		return side == Side.WHITE ? "Q" : "q";
 	}
 }

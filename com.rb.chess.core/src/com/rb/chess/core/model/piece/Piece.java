@@ -18,10 +18,13 @@ public abstract class Piece {
 	 */
 	private final int score;
 	private Square square;
-	private final Side side;
+	protected final Side side;
 	
 	// Added square because each piece has initial position
-	public Piece(Square square, int score, Side side) {
+	// Constructor is protected since only the child classes can call it
+	protected Piece(Square square, Side side, int score) {
+		this.square = square;
+		this.square.setPiece(this);
 		this.score = score;
 		this.side = side;
 	}
