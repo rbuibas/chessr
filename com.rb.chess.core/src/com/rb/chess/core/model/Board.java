@@ -29,4 +29,17 @@ public class Board {
 	public Army getArmy(Side side) {
 		return side == Side.BLACK ? blackArmy : whiteArmy ;
 	}
+
+	public void display() {
+		for (int r = Board.LENGTH - 1; r >= 0 ; r--) {
+			for (int c = 0; c < Board.LENGTH; c++) {
+				if (squares[r][c].getPiece() != null) {
+					System.out.print(squares[r][c].getPiece().toString());
+				} else {
+					System.out.print(".");
+				}
+			}
+			System.out.println();
+		}
+	}
 }

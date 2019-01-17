@@ -8,17 +8,18 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 
+import com.rb.chess.core.model.Board;
+import com.rb.chess.room.ChessRoom;
+
 public class ChessBoardPart {
 	
-	private Label label;
+	private ChessRoom chessRoom;
 
 	@PostConstruct
 	public void createComposite(Composite parent) {
-		parent.setLayout(new GridLayout(1, false));
-		
-		label = new Label(parent, SWT.BORDER | SWT.BOLD);
-		label.setText("Chess Engine Needed");
-		label.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+		chessRoom = new ChessRoom();
+		Board board = chessRoom.getBoard();
+		board.display();
 	}
 
 	@Focus

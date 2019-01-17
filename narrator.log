@@ -3,7 +3,7 @@ https://www.youtube.com/watch?v=zacLahqmlf0&index=1&list=PL36SguL4LIwmhgHkziX-2C
 
 ...only started writing this from the 5th lessons, so maybe do a retroactive naration later.
 
-# Lesson 5
+# Lesson 5 - Creating an Army of pieces
 
 We need to build an "Army" so we can keep track of the pieces for each side (Black/White).
 It should hold two lists:
@@ -31,3 +31,11 @@ Remove the versions, so there won't be any compatibility issues.
 Further, for the functionality we need to add the ChessRoom, where the game will be managed.
 From the ChessBoardPart the ChessRoom will be referenced, because we do not want to 
 overcrowd the ChessBoardPart, which should only handle the visual part.
+
+# Lesson 7 - Building the Chess Room
+
+Not much to discuss here, except the fact that in the MANIFEST.MD exports and imports need to be handled so the packages would be visible in different plugins.
+Adding the board to the chess room and adding the pieces to the board.
+
+# Lesson 8 - Displaying initial board state
+
