@@ -23,6 +23,8 @@ public class Board {
 	}
 	
 	public Square getSquare(int row, int col) {
+		if (row < 0 || row > LENGTH -1 || col < 0 || col > LENGTH -1) 
+			return null; // otherwise we get OutOfBoundsException
 		return squares[row][col];
 	}
 	

@@ -23,7 +23,6 @@ public class Knight extends Piece {
 
 	@Override
 	public List<Square> computeLegalMoves() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 }

@@ -28,6 +28,16 @@ public class Square {
 	public Piece getPiece() {
 		return this.piece;
 	}
+	
+	/**
+	 * 
+	 * @param hOffset offset on the column
+	 * @param vOffset offset on the row
+	 * @return
+	 */
+	public Square getAdjescentSquare(int hOffset, int vOffset) {
+		return board.getSquare(this.col + hOffset, this.row + vOffset);
+	}
 
 }
 
