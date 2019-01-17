@@ -1,0 +1,33 @@
+Based on Utku Ufuk's video serioes on Youtube:
+https://www.youtube.com/watch?v=zacLahqmlf0&index=1&list=PL36SguL4LIwmhgHkziX-2C91SOTQl1rEL
+
+...only started writing this from the 5th lessons, so maybe do a retroactive naration later.
+
+# Lesson 5
+
+We need to build an "Army" so we can keep track of the pieces for each side (Black/White).
+It should hold two lists:
+	1. Live pieces
+	2. Dead pieces
+Wonder if we need separate black and white army ?
+
+# Lesson 6 - Create the Feature Plug-In
+
+This video handles linking of the two plugins together.
+One holds the engine and the other holds the actual app (UI).
+
+Core needs not be aware of anything outside of itself, so it will be one way dependency.
+
+First, cereate a new feature project, in which the included plugins need to be added.
+Those are the two we created.
+Then, in UI plugin in the Content tab of the product the feature needs to be added.
+Also following features need to be added as well:
+<feature id="org.eclipse.e4.rcp" version="1.6.300.v20181204-1801"/>
+<feature id="org.eclipse.emf.ecore" version="2.16.0.v20181124-0637"/>
+<feature id="org.eclipse.emf.common" version="2.15.0.v20180914-1817"/>
+
+Remove the versions, so there won't be any compatibility issues.
+
+Further, for the functionality we need to add the ChessRoom, where the game will be managed.
+From the ChessBoardPart the ChessRoom will be referenced, because we do not want to 
+overcrowd the ChessBoardPart, which should only handle the visual part.

@@ -3,9 +3,16 @@ package com.rb.chess.core.model;
 public class Board {
 	public static final int LENGTH = 8;
 	
+	private Army whiteArmy;
+	private Army blackArmy;
+	
 	private Square[][] squares;
 
-	public Board() {
+	public Board(Army white, Army black) {
+		
+		this.whiteArmy = white;
+		this.blackArmy = black;
+		
 		squares = new Square[LENGTH][LENGTH];
 		
 		for (int r = 0; r < LENGTH; r++) {
@@ -17,5 +24,9 @@ public class Board {
 	
 	public Square getSquare(int row, int col) {
 		return squares[row][col];
+	}
+	
+	public Army getArmy(Side side) {
+		return side == Side.BLACK ? blackArmy : whiteArmy ;
 	}
 }
