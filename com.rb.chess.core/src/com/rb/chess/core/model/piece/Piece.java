@@ -28,4 +28,8 @@ public abstract class Piece {
 		this.score = score;
 		this.side = side;
 	}
+
+	public void setSquare(Square square) {
+		this.square = square;
+	}
 }

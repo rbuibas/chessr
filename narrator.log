@@ -39,3 +39,25 @@ Adding the board to the chess room and adding the pieces to the board.
 
 # Lesson 8 - Displaying initial board state
 
+The board state has been decided in the ChessRoom class, now we have to display it.
+Firtsly display it with syso in the console, just for the sake of it.
+Not a big deal, but what is interesting is the black pieces will be diplsayed on the bottom.
+This should not be the case.
+What Utku sugests is to reverse the parsing of the board when displaying it.
+I'm thinking that the board should be created reversed from the beginning.
+We'll see.
+Also, there should be a reverse functionality.
+
+# Lesson 9 - Creating Plug-In for Chess Player
+
+A separate plugin to be created to represent the Chess Player.
+Also a class is added called ChessPlayer, which will hold the board and the side.
+A method makeMove is implemented which will handle the moving of the piece:
+- changing the square to which it belongs
+- changing the properties of the square
+- handle the case of capturing
+
+It is presumed that the move is valid.
+This will be checked elsewhere.
+
+# Lesson 10 - Computing Legal Moves
