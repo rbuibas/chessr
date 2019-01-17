@@ -99,4 +99,15 @@ Pawns only move forward, but be aware that Black moves backwards since our board
 Take care of two squares move on the first pawn move and capturing on the diagonal as well.
 In the future take care of En Passant and Pawn Promotion.
 
-# Lesson 14 - Computing Linear Moves
+# Lesson 15 - Computing Linear Moves
+
+For Bishop, Queen and Rook the moves are lineary infinite (limited to the board of course).
+
+One computeLinearMoves should be defined, and it can be used for the rest of the pieces.
+How ? Loop over squares for all 4 directions until either:
+- end is reached (so getAdjescentSquare returns null)
+- own piece reached -> break (it's invalid)
+- oponnent piece reached -> break (it's valid though)
+To maintain the loop just getAdjescentSquare squre from the previously gotten adjescent square.
+Easy.
+

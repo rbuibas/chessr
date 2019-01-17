@@ -1,5 +1,6 @@
 package com.rb.chess.core.model.piece;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.rb.chess.core.model.Side;
@@ -45,5 +46,30 @@ public abstract class Piece {
 		if (square != null && square.getPiece() == null || square.getPiece().side != this.side) {
 			legalMoves.add(square);
 		}
+	}
+	
+	/**
+	 * 
+	 * @param h general horizontal direction
+	 * @param v general vertical direction
+	 * @return
+	 */
+	protected List<Square> computeLinearMoves(int h, int v) {
+		List<Square> legalMoves = new ArrayList<Square>();
+		Square targetSquare;
+		targetSquare = square.getAdjescentSquare(h, v);
+		while (targetSquare != null) {
+			if (targetSquare.getPiece() == null) {
+				legalMoves.add(targetSquare);
+			} else if (targetSquare.getPiece().side == this.side) {
+				break; // no more moves beyond that square
+			} else {
+				legalMoves.add(targetSquare);
+				break;
+			}
+			// like this one below, it's elegant
+			targetSquare = targetSquare.getAdjescentSquare(h, v);
+		}
+		return legalMoves;
 	}
 }
