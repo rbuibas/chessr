@@ -72,3 +72,31 @@ This refers to the possibility of accessing another square given an existing one
 For example sq1.access(row+2, col-1);
 
 # Lesson 12 - Computing Legal Moves for Knight
+
+Need to define the possible moves for the Knight and then check them all.
+A move is illegal if:
+- it takes a piece of the board
+- on the target square one of own pieces exist
+- targe square has no piece or oponnent piece
+Additionally, but not implemented (valid for all pieces):
+- cannot move piece it if uncovers chess
+
+8 possible moves for the night with different offset.
+Would like to refactor the calculation, if possible.
+
+# Lesson 13 - Computing Legal Moves for Knight
+
+Same move legality applies as for the Knight.
+King's movement is done in two nested 4 loops, from -1 to 1, giving all 9 possible positions.
+The 0,0 is considered invalid, because own piece (the King) is on that square.
+
+Moved checking of the validity to the Piece class since it's reusable.
+Wonder how the chess uncover will be implemented.
+
+# Lesson 14 - Computing Legal Moves for Pawns
+
+Pawns only move forward, but be aware that Black moves backwards since our board is fixed, at least from program's perspective.
+Take care of two squares move on the first pawn move and capturing on the diagonal as well.
+In the future take care of En Passant and Pawn Promotion.
+
+# Lesson 14 - Computing Linear Moves

@@ -21,6 +21,18 @@ public class Square {
 		this.col = col;
 	}
 	
+	public Board getBoard() {
+		return board;
+	}
+
+	public int getRow() {
+		return row;
+	}
+
+	public int getCol() {
+		return col;
+	}
+	
 	public void setPiece(Piece piece) {
 		this.piece = piece;
 	}
@@ -31,8 +43,8 @@ public class Square {
 	
 	/**
 	 * 
-	 * @param hOffset offset on the column
-	 * @param vOffset offset on the row
+	 * @param hOffset offset (add to the column)
+	 * @param vOffset offset (add to the row)
 	 * @return
 	 */
 	public Square getAdjescentSquare(int hOffset, int vOffset) {
