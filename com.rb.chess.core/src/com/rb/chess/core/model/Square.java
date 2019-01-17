@@ -38,6 +38,5 @@ public class Square {
 	public Square getAdjescentSquare(int hOffset, int vOffset) {
 		return board.getSquare(this.col + hOffset, this.row + vOffset);
 	}
-
 }
 

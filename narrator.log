@@ -65,3 +65,10 @@ This will be checked elsewhere.
 Legal moves for each piece will be computed, after which those moves will be merged as all available legal moves for a player.
 A lot of loops, this could and should all be done with streams.
 Will convert all of this later.
+
+# Lesson 11 - Relative Square Access
+
+This refers to the possibility of accessing another square given an existing one.
+For example sq1.access(row+2, col-1);
+
+# Lesson 12 - Computing Legal Moves for Knight

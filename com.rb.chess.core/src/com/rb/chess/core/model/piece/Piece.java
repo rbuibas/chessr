@@ -19,7 +19,7 @@ public abstract class Piece {
 	 *  - side (color) 
 	 */
 	private final int score;
-	private Square square;
+	protected Square square;
 	protected final Side side;
 	
 	public abstract List<Square> computeLegalMoves();
