@@ -135,3 +135,9 @@ Maybe create a factory.
 
 # Lesson 20 - Setting the background colors of the squares
 
+First move the logic for piece setting on the board to the setFocus method.
+Also call that method in the PostConstruct once to make the initial setting.
+After that add the code to color the squares accordingly.
+Utku does this in setFocus method. Not sure why thoguh.
+Answer: in the future when the mvoe is made, we need to see the possible moves highlited.
+This can only be done if we move the logic to setFocus. Ha !

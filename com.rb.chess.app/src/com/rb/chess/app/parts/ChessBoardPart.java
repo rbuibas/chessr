@@ -6,6 +6,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 
 import com.rb.chess.core.model.Board;
@@ -56,13 +57,6 @@ public class ChessBoardPart {
 				// with set data we can link any object to the widget
 				// in this case we link our Square object
 				squares[r][c + 1].setData(chessRoom.getBoard().getSquare(r, c));
-//				squares[r][c].setText(squares[r][c].getData().toString());
-				Piece piece = ((Square) squares[r][c + 1].getData()).getPiece();
-				if (piece != null) {
-					squares[r][c + 1].setImage(piece.getIcon());
-				} else {
-					squares[r][c + 1].setImage(IconHandler.getBlankIcon());
-				}
 			}
 		}
 		squares[Board.LENGTH][0] = new Label(parent, SWT.NONE);
@@ -73,10 +67,30 @@ public class ChessBoardPart {
 //			squares[Board.LENGTH][i + 1].setText(Character.toString((char) ('A' + i)));
 			squares[Board.LENGTH][i + 1].setText(COL_LETTER[i]);
 		}
+		setFocus();
 	}
 
 	@Focus
 	public void setFocus() {
-		
+		System.out.println("Got focused");
+		for (int r = Board.LENGTH - 1; r >= 0; r--) {
+			for (int c = 0; c < Board.LENGTH; c++) {
+				paintTheSquares(r, c);
+				Piece piece = ((Square) squares[r][c + 1].getData()).getPiece();
+				if (piece != null) {
+					squares[r][c + 1].setImage(piece.getIcon());
+				} else {
+//					squares[r][c + 1].setImage(IconHandler.getBlankIcon());
+				}
+			}
+		}
+	}
+	
+	private void paintTheSquares(int r, int c) {
+		if ((r + c) % 2 == 0) {
+			squares[r][c + 1].setBackground(Display.getDefault().getSystemColor(SWT.COLOR_DARK_GRAY));
+		} else {
+			squares[r][c + 1].setBackground(Display.getDefault().getSystemColor(SWT.COLOR_WHITE));
+		}
 	}
 }
