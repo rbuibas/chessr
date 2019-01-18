@@ -33,6 +33,11 @@ public class Army {
 		livePieces.remove(piece);
 		deadPieces.add(piece);
 	}
+
+	public void revivePiece(Piece piece) {
+		livePieces.add(piece);
+		deadPieces.remove(piece);
+	}
 	
 	
 

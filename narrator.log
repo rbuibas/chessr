@@ -201,3 +201,10 @@ Set the Conatainer Data for each stack, so the parts will be resized automatical
 # Lesson 27 - Computing the Board Rating
 
 Just sustract the scores of the dead/alive... however you want.
+
+# Lesson 28 - Undoing the moves
+
+This will be used by the AI algorithms, which need to perform moves and undo them to find the best one.
+What needs to be taken into account:
+- undoing the move means doing the oposite that has been done in the makeMove
+- the pieces need to be taken out of the deadPieces and put into livePieces (if that's the case)

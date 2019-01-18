@@ -59,6 +59,6 @@ public class Board {
 		for (Piece p : blackArmy.getLivePieces()) {
 			blackScore += p.getScore();
 		}
-		return side == Side.WHITE ? blackScore - whiteScore : whiteScore - blackScore;
+		return side == Side.BLACK ? blackScore - whiteScore : whiteScore - blackScore;
 	}
 }

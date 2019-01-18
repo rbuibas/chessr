@@ -19,11 +19,14 @@ public class ChessMoveListener implements MouseListener {
 	private static Piece selectedPiece;
 	private static boolean doubleClicked;
 	
+	private static Board board;
+	
 	// static, because we have 64 listeners and we need them to
 	// know the same player
 	private static ChessPlayer whitePlayer, blackPlayer;
 	
 	public ChessMoveListener(Label label) {
+		board = ChessBoardPart.getChessRoom().getBoard();
 		this.label = label;
 		activeSide = Side.WHITE;
 		whitePlayer = ChessBoardPart.getChessRoom().getPlayer(Side.WHITE);
@@ -65,6 +68,7 @@ public class ChessMoveListener implements MouseListener {
 			ChessMove move = blackPlayer.decideMove();
 			blackPlayer.makeMove(move);
 			activeSide = activeSide.opposite();
+			System.out.println(board.computeRating(Side.WHITE));
 		}
 	}
 
@@ -76,7 +80,7 @@ public class ChessMoveListener implements MouseListener {
 	private void resetLegalMoves() {
 		for (int r = 0; r < Board.LENGTH; r++) {
 			for (int c = 0; c < Board.LENGTH; c++) {
-				ChessBoardPart.getChessRoom().getBoard().getSquare(r, c).setLegal(false);
+				board.getSquare(r, c).setLegal(false);
 			}
 		}
 	}
