@@ -5,11 +5,12 @@ import java.util.List;
 
 import com.rb.chess.core.model.Side;
 import com.rb.chess.core.model.Square;
+import com.rb.chess.core.model.icons.IconHandler;
 
 public class WhitePawn extends Piece {
 
 	public WhitePawn(Square square) {
-		super(square, Side.WHITE, 1);
+		super(square, Side.WHITE, 1, IconHandler.getPieceIcon("pawn", Side.WHITE));
 	}
 
 	/*

@@ -5,11 +5,12 @@ import java.util.List;
 
 import com.rb.chess.core.model.Side;
 import com.rb.chess.core.model.Square;
+import com.rb.chess.core.model.icons.IconHandler;
 
 public class King extends Piece {
 
 	public King(Square square, Side side) {
-		super(square, side, 99);
+		super(square, side, 99, IconHandler.getPieceIcon("king", side));
 	}
 	
 	/*

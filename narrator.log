@@ -126,3 +126,12 @@ Put the text in the matrix by getting the Piece of the square (if there is one) 
 Need to add an extra row of labels.
 Also take care of the square that's before the letter A and before the number 1.
 
+# Lesson 19 - Add piece icons
+
+Find the images and add them to the plugin.
+Create a handler, which is set in the code plugin, which I do not like, but alas.
+Add the icon to the Piece constructor, and odify all the calls to the specific pieces. Should be improved.
+Maybe create a factory.
+
+# Lesson 20 - Setting the background colors of the squares
+
