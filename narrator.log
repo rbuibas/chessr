@@ -176,4 +176,7 @@ Need to fix the bug where the legal moves do not get reset.
 Utku does some cross referencing which I do not like.
 Should change that.
 
-# Lesson 24 - 
+# Lesson 24 - Making Moves with mouse clicks
+
+Maine changes to ChessMoveListener.
+

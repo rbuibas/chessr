@@ -88,7 +88,7 @@ public class ChessBoardPart {
 				if (piece != null) {
 					squares[r][c + 1].setImage(piece.getIcon());
 				} else {
-//					squares[r][c + 1].setImage(IconHandler.getBlankIcon());
+					squares[r][c + 1].setImage(IconHandler.getBlankIcon());
 				}
 			}
 		}
