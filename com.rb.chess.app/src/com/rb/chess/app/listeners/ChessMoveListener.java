@@ -15,6 +15,7 @@ import com.rb.chess.player.ChessPlayer;
 
 public class ChessMoveListener implements MouseListener {
 	private final Label label;
+	private static Side activeSide;
 	private static Piece selectedPiece;
 	private static boolean doubleClicked;
 	
@@ -24,6 +25,7 @@ public class ChessMoveListener implements MouseListener {
 	
 	public ChessMoveListener(Label label) {
 		this.label = label;
+		activeSide = Side.WHITE;
 		whitePlayer = ChessBoardPart.getChessRoom().getPlayer(Side.WHITE);
 		blackPlayer = ChessBoardPart.getChessRoom().getPlayer(Side.BLACK);
 	}
@@ -45,17 +47,24 @@ public class ChessMoveListener implements MouseListener {
 
 	@Override
 	public void mouseDown(MouseEvent e) {
-		if (doubleClicked) {
+		if (doubleClicked) { 
+			// assuming WHITE side here
+			// will need to change if you want to play with Black
 			Square targetSquare = (Square) label.getData();
 			if (targetSquare.isLegal()) {
 				Square initialSquare = selectedPiece.getSquare();
 				Piece targetPiece = targetSquare.getPiece(); // could be null
 				ChessMove move = new ChessMove(initialSquare, targetSquare, targetPiece);
 				whitePlayer.makeMove(move);
-				
-				doubleClicked = false;
-				resetLegalMoves();
+				// change the turn
+				activeSide = activeSide.opposite();
 			}
+			doubleClicked = false;
+			resetLegalMoves();
+		} else if (activeSide == Side.BLACK) {
+			ChessMove move = blackPlayer.decideMove();
+			blackPlayer.makeMove(move);
+			activeSide = activeSide.opposite();
 		}
 	}
 

@@ -14,6 +14,7 @@ import com.rb.chess.core.model.piece.Queen;
 import com.rb.chess.core.model.piece.Rook;
 import com.rb.chess.core.model.piece.WhitePawn;
 import com.rb.chess.player.ChessPlayer;
+import com.rb.chess.player.RandomChessPlayer;
 
 public class ChessRoom {
 	private final Board board;
@@ -53,7 +54,7 @@ public class ChessRoom {
 		blackArmy.addPiece(new King(board.getSquare(7, 4), Side.BLACK));
 		
 		players.put(Side.WHITE, new ChessPlayer(board, Side.WHITE));
-		players.put(Side.BLACK, new ChessPlayer(board, Side.BLACK));
+		players.put(Side.BLACK, new RandomChessPlayer(board, Side.BLACK));
 	}
 	
 	public Board getBoard() {

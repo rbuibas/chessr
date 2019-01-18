@@ -180,3 +180,9 @@ Should change that.
 
 Maine changes to ChessMoveListener.
 
+# Lesson 25 - Implementing the turn mechanism
+
+Implementing the RandomMove maker, which will get active on the mouseDown.
+So, after making a move, an additional single click needs to be made so the 
+"AI" will make its move.
+Weird.
