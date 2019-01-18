@@ -50,18 +50,18 @@ public class ChessBoardPart {
 			squares[r][0].setLayoutData(tagGridData);
 			squares[r][0].setText(Integer.toString(r + 1));
 			for (int c = 0; c < Board.LENGTH; c++) {
-				squares[r][c] = new Label(parent, SWT.BORDER);
+				squares[r][c + 1] = new Label(parent, SWT.BORDER);
 				// center it a little bit
-				squares[r][c].setLayoutData(squareGridData);
+				squares[r][c + 1].setLayoutData(squareGridData);
 				// with set data we can link any object to the widget
 				// in this case we link our Square object
-				squares[r][c].setData(chessRoom.getBoard().getSquare(r, c));
+				squares[r][c + 1].setData(chessRoom.getBoard().getSquare(r, c));
 //				squares[r][c].setText(squares[r][c].getData().toString());
-				Piece piece = ((Square) squares[r][c].getData()).getPiece();
+				Piece piece = ((Square) squares[r][c + 1].getData()).getPiece();
 				if (piece != null) {
-					squares[r][c].setImage(piece.getIcon());
+					squares[r][c + 1].setImage(piece.getIcon());
 				} else {
-					squares[r][c].setImage(IconHandler.getBlankIcon());
+					squares[r][c + 1].setImage(IconHandler.getBlankIcon());
 				}
 			}
 		}
