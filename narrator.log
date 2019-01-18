@@ -198,4 +198,6 @@ There will be on Graveyard class, from which two child classes will spawn.
 Change the relative dimensions for each part stack.
 Set the Conatainer Data for each stack, so the parts will be resized automatically.
 
-# Lesson 27 - 
+# Lesson 27 - Computing the Board Rating
+
+Just sustract the scores of the dead/alive... however you want.

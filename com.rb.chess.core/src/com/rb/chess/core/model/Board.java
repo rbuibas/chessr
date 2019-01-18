@@ -1,5 +1,7 @@
 package com.rb.chess.core.model;
 
+import com.rb.chess.core.model.piece.Piece;
+
 public class Board {
 	public static final int LENGTH = 8;
 	
@@ -43,5 +45,20 @@ public class Board {
 			}
 			System.out.println();
 		}
+	}
+	
+	// doing it here since here we have the armies
+	public int computeRating(Side side) {
+		int whiteScore = 0;
+		int blackScore = 0;
+		
+		for (Piece p : whiteArmy.getLivePieces()) {
+			whiteScore += p.getScore();
+		}
+		
+		for (Piece p : blackArmy.getLivePieces()) {
+			blackScore += p.getScore();
+		}
+		return side == Side.WHITE ? blackScore - whiteScore : whiteScore - blackScore;
 	}
 }

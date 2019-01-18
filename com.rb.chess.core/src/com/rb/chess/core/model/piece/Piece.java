@@ -53,6 +53,10 @@ public abstract class Piece {
 		return side;
 	}
 	
+	public int getScore() {
+		return score;
+	}
+	
 	protected void checkSquare(List<Square> legalMoves, Square square) {
 		if (square != null && (square.getPiece() == null || square.getPiece().side != this.side)) {
 			legalMoves.add(square);
