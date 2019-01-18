@@ -163,3 +163,17 @@ But first add mouse listeners to the squares, in the setFocus, inside the ChessB
 Need the legal flag on each square so we can use it to color the square.
 
 Implement the mouseDoubleClick for the listener, which will mark the legal moves.
+
+# Lesson 23 - Highlighting legal moves
+
+Additional functionality to the mouseDoubleClick of the listener.
+Need to make sure that after the mouseDoubleClick method is done the setFocus is called immediately.
+Will call the setFocus method in the mouseUp method of the listener.
+Add a new PartRefresher class which will refresh all (or some) of the parts.
+e.g. we'll add a graveyard part for the captured pieces.
+
+Need to fix the bug where the legal moves do not get reset.
+Utku does some cross referencing which I do not like.
+Should change that.
+
+# Lesson 24 - 

@@ -61,12 +61,13 @@ public class Square {
 	 * @return
 	 */
 	public Square getAdjescentSquare(int hOffset, int vOffset) {
-		return board.getSquare(this.col + hOffset, this.row + vOffset);
+		return board.getSquare(this.row + vOffset, this.col + hOffset);
 	}
 	
 	@Override
 	public String toString() {
-		return this.piece != null ? this.piece.toString() : "";
+//		return this.piece != null ? this.piece.toString() : "";
+		return String.format("%s%s", (char) ('A' + col), (1 + row));
 	}
 }
 

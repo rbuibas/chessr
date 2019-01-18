@@ -3,6 +3,7 @@ package com.rb.chess.app.parts;
 import javax.annotation.PostConstruct;
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
@@ -17,31 +18,33 @@ import com.rb.chess.core.model.piece.Piece;
 import com.rb.chess.room.ChessRoom;
 
 public class ChessBoardPart {
-	
-	private static final String[] COL_LETTER = {"A", "B", "C", "D", "E", "F", "G", "H"};
-	private ChessRoom chessRoom;
+
+	private static final String[] COL_LETTER = { "A", "B", "C", "D", "E", "F", "G", "H" };
+	private static ChessRoom chessRoom; // only one chess room instance
 	private Label[][] squares;
-	
+	private Color lightBlue;
+
 	public ChessBoardPart() {
 		chessRoom = new ChessRoom();
 		// +1 is for numbers and letters
 		squares = new Label[Board.LENGTH + 1][Board.LENGTH + 1];
+		lightBlue = new Color(Display.getDefault(), 145, 185, 255);
 	}
 
 	@PostConstruct
 	public void createComposite(Composite parent) {
 		// only the widget here
 		// create the labels here
-		
-		// but first set the layout 
+
+		// but first set the layout
 		// GridLayout lets you organize your widget as a matrix
-		
-		// +1 is for numbers and letters		
+
+		// +1 is for numbers and letters
 		parent.setLayout(new GridLayout(Board.LENGTH + 1, false));
-		
+
 		// arrange a little bit the data represented
 		// the gridData object will center horizontally and vertically
-		// it's a good practice to center 
+		// it's a good practice to center
 		GridData squareGridData = new GridData(SWT.FILL, SWT.CENTER, true, false);
 		// another grid data for tags (letters and numbers on the side of the board)
 		GridData tagGridData = new GridData(SWT.CENTER, SWT.CENTER, true, false);
@@ -70,6 +73,8 @@ public class ChessBoardPart {
 			squares[Board.LENGTH][i + 1].setText(COL_LETTER[i]);
 		}
 		setFocus();
+		// best place since the widget is fully created
+		PartRefresher.setChessBoardPart(this);
 	}
 
 	@Focus
@@ -89,12 +94,16 @@ public class ChessBoardPart {
 		}
 	}
 	
+	public static ChessRoom getChessRoom() {
+		return chessRoom;
+	}
+
 	private void setSquareLegal(int r, int c) {
 		if (((Square) squares[r][c + 1].getData()).isLegal()) {
-			squares[r][c + 1].setBackground(Display.getDefault().getSystemColor(SWT.COLOR_BLUE));
+			squares[r][c + 1].setBackground(lightBlue);
 		}
 	}
-	
+
 	private void paintTheSquares(int r, int c) {
 		if ((r + c) % 2 == 0) {
 			squares[r][c + 1].setBackground(Display.getDefault().getSystemColor(SWT.COLOR_DARK_GRAY));
