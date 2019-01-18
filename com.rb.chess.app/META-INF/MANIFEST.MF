@@ -20,5 +20,6 @@ Automatic-Module-Name: com.rb.chess.app
 Import-Package: com.rb.chess.core.model,
  com.rb.chess.core.model.icons,
  com.rb.chess.core.model.piece,
+ com.rb.chess.player,
  javax.annotation;version="0.0.0"
 Bundle-ActivationPolicy: lazy
