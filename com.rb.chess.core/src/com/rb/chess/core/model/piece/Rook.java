@@ -1,5 +1,6 @@
 package com.rb.chess.core.model.piece;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.rb.chess.core.model.Side;
@@ -23,7 +24,11 @@ public class Rook extends Piece {
 
 	@Override
 	public List<Square> computeLegalMoves() {
-		// TODO Auto-generated method stub
-		return null;
+		List<Square> legalMoves = new ArrayList<Square>();
+		legalMoves.addAll(computeLinearMoves(0,1));
+		legalMoves.addAll(computeLinearMoves(1,0));
+		legalMoves.addAll(computeLinearMoves(0,-1));
+		legalMoves.addAll(computeLinearMoves(-1,0));
+		return legalMoves;
 	}
 }

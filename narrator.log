@@ -111,3 +111,8 @@ How ? Loop over squares for all 4 directions until either:
 To maintain the loop just getAdjescentSquare squre from the previously gotten adjescent square.
 Easy.
 
+# Lesson 16 - Computing Legal Moves for Rook, Bishop and Queen
+
+Just use the computeLinearMoves with directions for all three.
+For the queen a for loop can be used to avoid code duplication.
+

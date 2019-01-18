@@ -65,7 +65,7 @@ public abstract class Piece {
 				break; // no more moves beyond that square
 			} else {
 				legalMoves.add(targetSquare);
-				break;
+				break; // no more moves beyond that square
 			}
 			// like this one below, it's elegant
 			targetSquare = targetSquare.getAdjescentSquare(h, v);
