@@ -152,3 +152,14 @@ Need to add a player to the ChessRoom.
 Use Map to store players so we can retreive them by the side.
 
 Note: once you make a change to the feature, you need to lunch the application from the procudt file.
+
+# Lesson 22 - Creating Listeners
+
+Add a package for listeners.
+Add a ChessMoveListener class.
+Implement the three override methods.
+
+But first add mouse listeners to the squares, in the setFocus, inside the ChessBoardPart.
+Need the legal flag on each square so we can use it to color the square.
+
+Implement the mouseDoubleClick for the listener, which will mark the legal moves.

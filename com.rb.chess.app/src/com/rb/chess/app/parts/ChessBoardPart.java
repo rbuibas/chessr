@@ -9,6 +9,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 
+import com.rb.chess.app.listeners.ChessMoveListener;
 import com.rb.chess.core.model.Board;
 import com.rb.chess.core.model.Square;
 import com.rb.chess.core.model.icons.IconHandler;
@@ -57,6 +58,7 @@ public class ChessBoardPart {
 				// with set data we can link any object to the widget
 				// in this case we link our Square object
 				squares[r][c + 1].setData(chessRoom.getBoard().getSquare(r, c));
+				squares[r][c + 1].addMouseListener(new ChessMoveListener(squares[r][c + 1]));
 			}
 		}
 		squares[Board.LENGTH][0] = new Label(parent, SWT.NONE);
@@ -76,6 +78,7 @@ public class ChessBoardPart {
 		for (int r = Board.LENGTH - 1; r >= 0; r--) {
 			for (int c = 0; c < Board.LENGTH; c++) {
 				paintTheSquares(r, c);
+				setSquareLegal(r, c);
 				Piece piece = ((Square) squares[r][c + 1].getData()).getPiece();
 				if (piece != null) {
 					squares[r][c + 1].setImage(piece.getIcon());
@@ -83,6 +86,12 @@ public class ChessBoardPart {
 //					squares[r][c + 1].setImage(IconHandler.getBlankIcon());
 				}
 			}
+		}
+	}
+	
+	private void setSquareLegal(int r, int c) {
+		if (((Square) squares[r][c + 1].getData()).isLegal()) {
+			squares[r][c + 1].setBackground(Display.getDefault().getSystemColor(SWT.COLOR_BLUE));
 		}
 	}
 	

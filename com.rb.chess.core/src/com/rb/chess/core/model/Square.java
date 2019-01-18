@@ -11,6 +11,10 @@ public class Square {
 	private final int row;
 	private final int col;
 	
+	// mark the square as legal or not
+	// used to mark the square with other color when the piece is selected
+	private boolean legal;
+	
 	//need a piece object as well
 	// not final because the piece can change (e.g. pawn promotion)
 	private Piece piece;
@@ -20,6 +24,15 @@ public class Square {
 		this.row = row;
 		this.col = col;
 	}
+	
+	public boolean isLegal() {
+		return legal;
+	}
+
+	public void setLegal(boolean legal) {
+		this.legal = legal;
+	}
+
 	
 	public Board getBoard() {
 		return board;
