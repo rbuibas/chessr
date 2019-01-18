@@ -186,3 +186,16 @@ Implementing the RandomMove maker, which will get active on the mouseDown.
 So, after making a move, an additional single click needs to be made so the 
 "AI" will make its move.
 Weird.
+
+# Lesson 26 - Displaying graveyard parts
+
+Need to add PartStack for two graveyards.
+One on the left and one on the right.
+Will need 16 labels each, for all the existing pieces that can be captured.
+Creating classes similar to the ChessBoardPart.
+There will be on Graveyard class, from which two child classes will spawn.
+
+Change the relative dimensions for each part stack.
+Set the Conatainer Data for each stack, so the parts will be resized automatically.
+
+# Lesson 27 - 
