@@ -120,3 +120,9 @@ For the queen a for loop can be used to avoid code duplication.
 
 Create a GridData widget, add the data to it, bu accessing the chessRoom, getting the Board and then the sqyare.
 Put the text in the matrix by getting the Piece of the square (if there is one) and accessing its toString() overriden method.
+
+# Lesson 18 - Add row numbers and column letters to the board
+
+Need to add an extra row of labels.
+Also take care of the square that's before the letter A and before the number 1.
+
