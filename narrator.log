@@ -116,3 +116,7 @@ Easy.
 Just use the computeLinearMoves with directions for all three.
 For the queen a for loop can be used to avoid code duplication.
 
+# Lesson 17 - Creating the first SWT widget
+
+Create a GridData widget, add the data to it, bu accessing the chessRoom, getting the Board and then the sqyare.
+Put the text in the matrix by getting the Piece of the square (if there is one) and accessing its toString() overriden method.
