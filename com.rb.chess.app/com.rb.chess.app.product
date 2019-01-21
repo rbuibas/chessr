@@ -15,6 +15,16 @@
 
    <windowImages/>
 
+
+   <launcher name="chesseR">
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+   <vm>
+   </vm>
+
    <plugins>
       <plugin id="com.ibm.icu"/>
       <plugin id="com.rb.chess.app"/>
@@ -92,8 +102,8 @@
    <features>
       <feature id="com.rb.chess.feature"/>
       <feature id="org.eclipse.e4.rcp"/>
-      <feature id="org.eclipse.emf.ecore"/>
       <feature id="org.eclipse.emf.common"/>
+      <feature id="org.eclipse.emf.ecore"/>
    </features>
 
 
