@@ -2,6 +2,7 @@ package com.rb.chess.app.parts;
 
 import javax.annotation.PostConstruct;
 
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
@@ -43,5 +44,7 @@ public class GraveyardPart {
 		for (int p = 0; p < army.getDeadPieces().size(); p++) {
 			deadPieces[p].setImage(army.getDeadPieces().get(p).getIcon());
 		}
+		System.out.println("Testing the chess console.");
+		System.out.println(Platform.getBundle("com.rb.chess.core").toString());
 	}
 }

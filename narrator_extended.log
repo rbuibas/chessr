@@ -1,0 +1,11 @@
+This file deals with steps taken for further implementation and design.
+The Chess application has been made ased on the Utku's video, however a lot of things aren't included in that series, like:
+- when does the game end
+- special cases (pawn promotion, en passent)
+- deployment
+- versioning
+
+# Deployment
+
+Following things need to be take re-checked when deployting:
+- build.properties needs to be checked (resource folders where icons are needs to be added to the plugin pack)

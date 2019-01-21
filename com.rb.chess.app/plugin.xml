@@ -9,10 +9,6 @@
             application="org.eclipse.e4.ui.workbench.swt.E4Application"
             name="com.rb.chess.app">
          <property
-               name="applicationCSS"
-               value="platform:/plugin/com.rb.chess.app/css/default.css">
-         </property>
-         <property
                name="appName"
                value="com.rb.chess.app">
          </property>

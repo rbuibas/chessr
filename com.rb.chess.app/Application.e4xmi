@@ -7,6 +7,7 @@
       </children>
       <children xsi:type="basic:PartStack" xmi:id="_6wlLk8gZEeSyMNYR5xypkQ" elementId="com.rb.chess.app.partstack.sample" containerData="8">
         <children xsi:type="basic:Part" xmi:id="_6wlLlMgZEeSyMNYR5xypkQ" elementId="com.rb.chess.app.part.chessboard" contributionURI="bundleclass://com.rb.chess.app/com.rb.chess.app.parts.ChessBoardPart" label="Chess Board" iconURI="platform:/plugin/com.rb.chess.app/icons/home.png"/>
+        <children xsi:type="basic:Part" xmi:id="_LkNTEB1kEemw7MbzVYzfYw" elementId="com.rb.chess.app.part.console" contributionURI="bundleclass://com.rb.chess.app/com.rb.chess.app.parts.ConsolePart" label="Chess Console"/>
       </children>
       <children xsi:type="basic:PartStack" xmi:id="_Q6zIMBs-Eem1guwi42ucfQ" elementId="com.rb.chess.app.partstack.graveyard.black" containerData="2">
         <children xsi:type="basic:Part" xmi:id="_YiGQwBs-Eem1guwi42ucfQ" elementId="com.rb.chess.app.part.graveyard.black" contributionURI="bundleclass://com.rb.chess.app/com.rb.chess.app.parts.BlackGraveyard" label="Black Gravevyard"/>
